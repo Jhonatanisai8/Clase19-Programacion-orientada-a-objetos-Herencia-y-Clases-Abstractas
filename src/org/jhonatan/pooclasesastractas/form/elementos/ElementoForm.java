@@ -1,5 +1,5 @@
 package org.jhonatan.pooclasesastractas.form.elementos;
 
-public class ElementoForm {
+abstract public class ElementoForm {
 
 }
