@@ -1,5 +1,6 @@
 package org.jhonatan.pooclasesastractas.form.elementos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SelectForm extends ElementoForm {
@@ -11,6 +12,7 @@ public class SelectForm extends ElementoForm {
 
     public SelectForm(String nombre) {
         super(nombre);
+        this.opciones = new ArrayList<String>();
     }
 
     public SelectForm(String nombre, List<String> opciones) {
