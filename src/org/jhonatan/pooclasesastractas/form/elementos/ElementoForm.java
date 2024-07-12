@@ -15,6 +15,10 @@ abstract public class ElementoForm {
         this.nombre = nombre;
     }
 
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
     // métodos
     abstract public String dibujarHtml();
 
