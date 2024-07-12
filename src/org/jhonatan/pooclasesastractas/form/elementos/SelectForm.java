@@ -30,8 +30,22 @@ public class SelectForm extends ElementoForm {
 
     @Override
     public String dibujarHtml() {
-        // TODO Auto-generated method stub
-        return null;
+        StringBuilder sb = new StringBuilder("<select ");
+        sb.append("name = '")
+                .append(this.nombre)
+                .append("'>");
+        for (Opcion opcion : this.opciones) {
+            sb.append("\n<option value = '")
+                    .append(opcion.getValor())
+                    .append("'");
+            if (opcion.isSelected()) { // si el atributo esta seleccionado (true)
+                sb.append("select");
+            }
+            sb.append(">").append(opcion.getNombre())
+                    .append("</option>");
+        }
+        sb.append("</select>");
+        return sb.toString();
     }
 
 }
