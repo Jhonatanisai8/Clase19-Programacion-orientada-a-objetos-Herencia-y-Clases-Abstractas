@@ -10,8 +10,8 @@ abstract public class ElementoForm {
 
     }
 
-    public ElementoForm(String valor, String nombre) {
-        this.valor = valor;
+    public ElementoForm(String nombre) {
+        this();
         this.nombre = nombre;
     }
 
