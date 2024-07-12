@@ -22,9 +22,10 @@ public class SelectForm extends ElementoForm {
         this.opciones = opciones;
     }
 
-    //método para agregar una opcion a la lista
-    public void addOpcion(Opcion opcion) {
+    // método para agregar una opcion a la lista
+    public SelectForm addOpcion(Opcion opcion) {
         this.opciones.add(opcion);
+        return this;
     }
 
     @Override
