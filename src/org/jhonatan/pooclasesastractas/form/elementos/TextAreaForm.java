@@ -6,9 +6,14 @@ public class TextAreaForm extends ElementoForm {
     private int filas;
     private int columnas;
 
-    @Override
-    public String dibujarHtml() {
-        return null;
+    public TextAreaForm(String nombre) {
+        super(nombre);
+    }
+
+    public TextAreaForm(String nombre, int filas, int columnas) {
+        super(nombre);
+        this.filas = filas;
+        this.columnas = columnas;
     }
 
     public int getFilas() {
@@ -27,4 +32,8 @@ public class TextAreaForm extends ElementoForm {
         this.columnas = columnas;
     }
 
+    @Override
+    public String dibujarHtml() {
+        return null;
+    }
 }
