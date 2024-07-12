@@ -22,6 +22,11 @@ public class SelectForm extends ElementoForm {
         this.opciones = opciones;
     }
 
+    //método para agregar una opcion a la lista
+    public void addOpcion(Opcion opcion) {
+        this.opciones.add(opcion);
+    }
+
     @Override
     public String dibujarHtml() {
         // TODO Auto-generated method stub
