@@ -2,10 +2,21 @@ package org.jhonatan.pooclasesastractas.form.elementos.select;
 
 public class Opcion {
 
+    // atributos
     private String valor;
     private String nombre;
     private boolean selected;
 
+    // constructores
+    public Opcion() {
+    }
+
+    public Opcion(String valor, String nombre) {
+        this.valor = valor;
+        this.nombre = nombre;
+    }
+
+    // getters y setters
     public String getValor() {
         return valor;
     }
