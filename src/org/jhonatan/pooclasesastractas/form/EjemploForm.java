@@ -51,6 +51,7 @@ public class EjemploForm {
 
         for (ElementoForm e : elementoForms) {
             System.out.println(e.dibujarHtml());
+            System.out.println("<br>");
         }
     }
 
