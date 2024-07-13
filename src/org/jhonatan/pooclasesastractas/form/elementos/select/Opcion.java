@@ -37,8 +37,21 @@ public class Opcion {
         return selected;
     }
 
+    /*
+     * public Opcion setSelected(boolean selected) {
+     * this.selected = selected;
+     * return this;
+     * }
+     */
+
+    // sobre-carga de metodos
     public void setSelected(boolean selected) {
         this.selected = selected;
+    }
+
+    public Opcion setSelected() {
+        this.selected = true;
+        return this;
     }
 
 }
