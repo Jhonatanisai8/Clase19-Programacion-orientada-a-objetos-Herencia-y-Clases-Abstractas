@@ -25,7 +25,7 @@ public class EjemploForm {
         TextAreaForm experencia = new TextAreaForm("exp", 5, 5);
         SelectForm lenguaje = new SelectForm("lenguaje");
 
-        Opcion java = new Opcion("I", "Java");
+        Opcion java = new Opcion("1", "Java");
         lenguaje.addOpcion(java);
         lenguaje.addOpcion(new Opcion("2", "Python"));
         lenguaje.addOpcion(new Opcion("3", "C++"));
