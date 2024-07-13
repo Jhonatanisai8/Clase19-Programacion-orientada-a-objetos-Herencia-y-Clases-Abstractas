@@ -46,7 +46,7 @@ abstract public class ElementoForm {
     public boolean esValido() {
         for (Validador v : validadores) {// iteramos
             if (!v.esValido(this.valor)) {// verificamos si es valido
-                this.errores.add(v.getMensaje());
+                this.errores.add(String.format(v.getMensaje(), nombre));
             }
         }
         return this.errores.isEmpty();// retorna si esta vacia
