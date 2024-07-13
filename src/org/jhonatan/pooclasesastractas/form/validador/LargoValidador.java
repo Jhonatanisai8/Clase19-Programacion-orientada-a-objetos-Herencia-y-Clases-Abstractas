@@ -36,7 +36,7 @@ public class LargoValidador extends Validador {
 
     @Override
     public boolean esValido(String valor) {
-        this.mensaje = String.format(this.mensaje, this.max, this.max);
+        this.mensaje = String.format(this.mensaje, this.min, this.max);
         if (valor == null) {
             return true;
         }
