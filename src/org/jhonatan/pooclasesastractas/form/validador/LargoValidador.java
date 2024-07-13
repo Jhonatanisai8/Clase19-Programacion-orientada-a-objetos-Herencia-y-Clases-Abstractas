@@ -1,5 +1,6 @@
 package org.jhonatan.pooclasesastractas.form.validador;
 
+
 public class LargoValidador extends Validador {
 
     // atributos
@@ -45,7 +46,9 @@ public class LargoValidador extends Validador {
         return (largo >= min && largo <= max);
     }
 
-    public String getMensajeFormateadi(String campo) {
-        return String.format(this.mensaje, campo, this.min, this.max);
-    }
+    /*
+     * public String getMensajeFormateadi(String campo) {
+     * return String.format(this.mensaje, campo, this.min, this.max);
+     * }
+     */
 }
