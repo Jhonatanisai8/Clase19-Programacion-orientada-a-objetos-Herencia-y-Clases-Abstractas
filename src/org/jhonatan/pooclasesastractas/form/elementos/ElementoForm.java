@@ -2,6 +2,8 @@ package org.jhonatan.pooclasesastractas.form.elementos;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.jhonatan.pooclasesastractas.form.validador.LargoValidador;
 import org.jhonatan.pooclasesastractas.form.validador.Validador;
 
 abstract public class ElementoForm {
@@ -46,7 +48,11 @@ abstract public class ElementoForm {
     public boolean esValido() {
         for (Validador v : validadores) {// iteramos
             if (!v.esValido(this.valor)) {// verificamos si es valido
-                this.errores.add(String.format(v.getMensaje(), nombre));
+                if (v instanceof LargoValidador) {
+                    this.errores.add(((LargoValidador) v).getMensajeFormateadi(nombre));
+                } else {
+                    this.errores.add(String.format(v.getMensaje(), nombre));
+                }
             }
         }
         return this.errores.isEmpty();// retorna si esta vacia
