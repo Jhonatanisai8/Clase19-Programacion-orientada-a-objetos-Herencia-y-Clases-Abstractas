@@ -25,6 +25,11 @@ abstract public class ElementoForm {
         this.nombre = nombre;
     }
 
+    public ElementoForm addValidador(Validador validador) {
+        this.validadores.add(validador);
+        return this;
+    }
+
     public void setValor(String valor) {
         this.valor = valor;
     }
