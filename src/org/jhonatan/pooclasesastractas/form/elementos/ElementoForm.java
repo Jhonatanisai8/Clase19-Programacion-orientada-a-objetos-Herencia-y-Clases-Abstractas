@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.jhonatan.pooclasesastractas.form.validador.LargoValidador;
 import org.jhonatan.pooclasesastractas.form.validador.Validador;
+import org.jhonatan.pooclasesastractas.form.validador.Mensaje.MensajeFormateable;
 
 abstract public class ElementoForm {
 
@@ -48,10 +49,8 @@ abstract public class ElementoForm {
     public boolean esValido() {
         for (Validador v : validadores) {// iteramos
             if (!v.esValido(this.valor)) {// verificamos si es valido
-                if (v instanceof LargoValidador) {
-                    this.errores.add(((LargoValidador) v).getMensajeFormateadi(nombre));
-                } else {
-                    this.errores.add(String.format(v.getMensaje(), nombre));
+                if (v instanceof MensajeFormateable) {
+                    this.errores.add(((LargoValidador) v).mensajeFormateado(nombre));
                 }
             }
         }
