@@ -2,7 +2,7 @@ package org.jhonatan.pooclasesastractas.form.validador;
 
 public class EmailValidador extends Validador {
 
-    protected String mensaje = "el formato de email es válido";
+    protected String mensaje = "el formato de email es inválido";
 
     private final static String EMAIL_REGEX = "^(.+)@(.+)$";
 
