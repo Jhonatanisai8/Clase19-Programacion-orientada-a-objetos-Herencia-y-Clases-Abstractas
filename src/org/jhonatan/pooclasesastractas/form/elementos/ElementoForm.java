@@ -34,7 +34,21 @@ abstract public class ElementoForm {
         this.valor = valor;
     }
 
+    public List<String> getErrores() {
+        return errores;
+    }
+
     // métodos
+    public boolean esValido() {
+        for (Validador v : validadores) {//iteramos
+            if (v.esValido(this.valor)) {//verificamos si es valido
+                this.errores.add(v.getMensaje());
+            }
+        }
+
+        return this.errores.isEmpty();//retorna si esta vacia
+    }
+
     abstract public String dibujarHtml();
 
 }
