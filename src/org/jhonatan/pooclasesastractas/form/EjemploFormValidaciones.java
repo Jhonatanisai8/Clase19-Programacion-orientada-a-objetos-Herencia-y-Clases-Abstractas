@@ -16,7 +16,9 @@ import org.jhonatan.pooclasesastractas.form.validador.RequeridoValidador;
 
 public class EjemploFormValidaciones {
     public static void main(String[] args) {
-        ejemploObjetos();
+        //ejemploObjetos();
+        ejemploObjetosOptimizado();
+
     }
 
     public static void ejemploObjetos() {
@@ -46,7 +48,7 @@ public class EjemploFormValidaciones {
         lenguaje.addOpcion(java)
                 .addOpcion(new Opcion("2", "Python"))
                 .addOpcion(new Opcion("3", "C++"))
-                .addOpcion(new Opcion("4", "Html").setSelected())
+                // .addOpcion(new Opcion("4", "Html").setSelected())
                 .addOpcion(new Opcion("5", "PHP"));
 
         // ejemplo de clase anonima
@@ -59,10 +61,10 @@ public class EjemploFormValidaciones {
 
         // establecemos valores
         saludar.setValor("Hola que tal ese campo esta desabilitado");
-        username.setValor("john.doe");
-        password.setValor("ab1c2d");
-        email.setValor("juan.doe@gmail.com");
-        edad.setValor("45");
+        username.setValor("");
+        password.setValor("ab1c6");
+        email.setValor("juan.doegmail.com");
+        edad.setValor("45kk");
         experencia.setValor("...mas de 10 años de experencia...");
         // java.setSelected(true);
         // html.setSelected(true);
@@ -76,11 +78,77 @@ public class EjemploFormValidaciones {
             System.out.println("<br>");
         });
 
+        // mostramos los errores
         elementoForms.forEach(e -> {
             if (!e.esValido()) {
                 e.getErrores().forEach(err -> {
                     System.out.println(err);
                 });
+            }
+        });
+    }
+
+    public static void ejemploObjetosOptimizado() {
+        // creando un objeto de tipo InputForm
+        InputForm username = new InputForm("username");
+        username.addValidador(new RequeridoValidador());
+
+        InputForm password = new InputForm("classe", "password");
+        password.addValidador(new RequeridoValidador());
+        password.addValidador(new LargoValidador(6, 12));
+
+        InputForm email = new InputForm("email", "email");
+        email.addValidador(new RequeridoValidador())
+                .addValidador(new EmailValidador());
+
+        InputForm edad = new InputForm("edad", "numbre");
+        edad.addValidador(new NumeroValidador());
+
+        // creando un objeto de tipo de textArea
+        TextAreaForm experencia = new TextAreaForm("exp", 5, 5);
+
+        SelectForm lenguaje = new SelectForm("lenguaje");
+        lenguaje.addValidador(new NoNuloValidador());
+
+        Opcion java = new Opcion("1", "Java");
+        // Opcion html = new Opcion("4", "Html");
+        lenguaje.addOpcion(java)
+                .addOpcion(new Opcion("2", "Python"))
+                .addOpcion(new Opcion("3", "C++"))
+                // .addOpcion(new Opcion("4", "Html").setSelected())
+                .addOpcion(new Opcion("5", "PHP"));
+
+        // ejemplo de clase anonima
+        ElementoForm saludar = new ElementoForm("saludo") {
+            @Override
+            public String dibujarHtml() {
+                return "<input disabled name = '" + this.nombre + "' value = \"" + this.valor + "\">";
+            }
+        };
+
+        // establecemos valores
+        saludar.setValor("Hola que tal ese campo esta desabilitado");
+        username.setValor("");
+        password.setValor("ab1c6");
+        email.setValor("juan.doegmail.com");
+        edad.setValor("45kk");
+        experencia.setValor("...mas de 10 años de experencia...");
+        // java.setSelected(true);
+        // html.setSelected(true);
+
+        // creando una lista de la clase de elemento-Form
+        List<ElementoForm> elementoForms = Arrays.asList(username,
+                password, email, edad, experencia, lenguaje, saludar);
+
+        elementoForms.forEach(e -> {
+            System.out.println(e.dibujarHtml());
+            System.out.println("<br>");
+        });
+
+        // mostramos los errores
+        elementoForms.forEach(e -> {
+            if (!e.esValido()) {
+                e.getErrores().forEach(System.out::println);
             }
         });
     }
