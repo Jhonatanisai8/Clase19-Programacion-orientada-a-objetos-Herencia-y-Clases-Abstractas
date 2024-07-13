@@ -26,10 +26,11 @@ public class EjemploFormClasesAnonima {
         SelectForm lenguaje = new SelectForm("lenguaje");
 
         Opcion java = new Opcion("1", "Java");
+        Opcion html = new Opcion("4", "Html");
         lenguaje.addOpcion(java)
                 .addOpcion(new Opcion("2", "Python"))
                 .addOpcion(new Opcion("3", "C++"))
-                .addOpcion(new Opcion("4", "JavaScript"))
+                .addOpcion(html)
                 .addOpcion(new Opcion("5", "PHP"));
 
         // ejemplo de clase anonima
@@ -47,7 +48,8 @@ public class EjemploFormClasesAnonima {
         email.setValor("juan@gmail.com");
         edad.setValor("45");
         experencia.setValor("...mas de 10 años de experencia...");
-        java.setSelected(true);
+        // java.setSelected(true);
+        html.setSelected(true);
 
         // creando una lista de la clase de elemento-Form
         List<ElementoForm> elementoForms = Arrays.asList(username,

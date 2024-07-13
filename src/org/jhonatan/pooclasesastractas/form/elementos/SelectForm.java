@@ -39,7 +39,7 @@ public class SelectForm extends ElementoForm {
                     .append(opcion.getValor())
                     .append("'");
             if (opcion.isSelected()) { // si el atributo esta seleccionado (true)
-                sb.append("select");
+                sb.append(" selected");
                 this.valor = opcion.getValor();
             }
             sb.append(">").append(opcion.getNombre())
