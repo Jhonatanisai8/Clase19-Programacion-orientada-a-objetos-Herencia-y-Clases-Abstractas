@@ -16,7 +16,7 @@ import org.jhonatan.pooclasesastractas.form.validador.RequeridoValidador;
 
 public class EjemploFormValidaciones {
     public static void main(String[] args) {
-        //ejemploObjetos();
+        // ejemploObjetos();
         ejemploObjetosOptimizado();
 
     }
@@ -26,9 +26,9 @@ public class EjemploFormValidaciones {
         InputForm username = new InputForm("username");
         username.addValidador(new RequeridoValidador());
 
-        InputForm password = new InputForm("classe", "password");
-        password.addValidador(new RequeridoValidador());
-        password.addValidador(new LargoValidador(6, 12));
+        InputForm password = new InputForm("clave", "password");
+        password.addValidador(new RequeridoValidador())
+                .addValidador(new LargoValidador(6, 12));
 
         InputForm email = new InputForm("email", "email");
         email.addValidador(new RequeridoValidador())
@@ -62,8 +62,8 @@ public class EjemploFormValidaciones {
         // establecemos valores
         saludar.setValor("Hola que tal ese campo esta desabilitado");
         username.setValor("");
-        password.setValor("ab1c6");
-        email.setValor("juan.doegmail.com");
+        password.setValor("");
+        email.setValor("");
         edad.setValor("45kk");
         experencia.setValor("...mas de 10 años de experencia...");
         // java.setSelected(true);
@@ -93,7 +93,7 @@ public class EjemploFormValidaciones {
         InputForm username = new InputForm("username");
         username.addValidador(new RequeridoValidador());
 
-        InputForm password = new InputForm("classe", "password");
+        InputForm password = new InputForm("clave", "password");
         password.addValidador(new RequeridoValidador());
         password.addValidador(new LargoValidador(6, 12));
 
@@ -129,8 +129,8 @@ public class EjemploFormValidaciones {
         // establecemos valores
         saludar.setValor("Hola que tal ese campo esta desabilitado");
         username.setValor("");
-        password.setValor("ab1c6");
-        email.setValor("juan.doegmail.com");
+        password.setValor("");
+        email.setValor("");
         edad.setValor("45kk");
         experencia.setValor("...mas de 10 años de experencia...");
         // java.setSelected(true);
@@ -145,10 +145,27 @@ public class EjemploFormValidaciones {
             System.out.println("<br>");
         });
 
+        // imprimir(elementoForms);
+        imprimirErrores(elementoForms);
+    }
+
+    // metodo para imprimir
+    public static void imprimir(List<ElementoForm> elementoForms) {
         // mostramos los errores
         elementoForms.forEach(e -> {
             if (!e.esValido()) {
                 e.getErrores().forEach(System.out::println);
+            }
+        });
+    }
+
+    public static void imprimirErrores(List<ElementoForm> elementoForms) {
+        // mostramos los errores
+        elementoForms.forEach(e -> {
+            if (!e.esValido()) {
+                e.getErrores().forEach(err -> {
+                    System.out.println(e.getNombre() + ": " + err);
+                });
             }
         });
     }
