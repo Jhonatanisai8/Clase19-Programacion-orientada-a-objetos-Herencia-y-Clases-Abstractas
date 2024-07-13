@@ -115,7 +115,7 @@ public class EjemploFormValidaciones {
         lenguaje.addOpcion(java)
                 .addOpcion(new Opcion("2", "Python"))
                 .addOpcion(new Opcion("3", "C++"))
-                // .addOpcion(new Opcion("4", "Html").setSelected())
+                .addOpcion(new Opcion("4", "Html").setSelected())
                 .addOpcion(new Opcion("5", "PHP"));
 
         // ejemplo de clase anonima
@@ -129,9 +129,9 @@ public class EjemploFormValidaciones {
         // establecemos valores
         saludar.setValor("Hola que tal ese campo esta desabilitado");
         username.setValor("");
-        password.setValor("");
-        email.setValor("");
-        edad.setValor("45kk");
+        password.setValor("12345");
+        email.setValor("joefloresgmail.com");
+        edad.setValor("4j5");
         experencia.setValor("...mas de 10 años de experencia...");
         // java.setSelected(true);
         // html.setSelected(true);
@@ -145,8 +145,8 @@ public class EjemploFormValidaciones {
             System.out.println("<br>");
         });
 
-        // imprimir(elementoForms);
-        imprimirErrores(elementoForms);
+        imprimir(elementoForms);
+        // imprimirErrores(elementoForms);
     }
 
     // metodo para imprimir
