@@ -2,7 +2,7 @@ package org.jhonatan.pooclasesastractas.form.validador;
 
 public class RequeridoValidador extends Validador {
 
-    protected String mensaje = "el campo es requerido";
+    protected String mensaje = "el campo %s es requerido";
 
     @Override
     public String getMensaje() {
