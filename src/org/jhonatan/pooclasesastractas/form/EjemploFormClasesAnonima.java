@@ -3,10 +3,7 @@ package org.jhonatan.pooclasesastractas.form;
 import java.util.Arrays;
 import java.util.List;
 
-import org.jhonatan.pooclasesastractas.form.elementos.ElementoForm;
-import org.jhonatan.pooclasesastractas.form.elementos.InputForm;
-import org.jhonatan.pooclasesastractas.form.elementos.SelectForm;
-import org.jhonatan.pooclasesastractas.form.elementos.TextAreaForm;
+import org.jhonatan.pooclasesastractas.form.elementos.*;
 import org.jhonatan.pooclasesastractas.form.elementos.select.Opcion;
 
 public class EjemploFormClasesAnonima {
