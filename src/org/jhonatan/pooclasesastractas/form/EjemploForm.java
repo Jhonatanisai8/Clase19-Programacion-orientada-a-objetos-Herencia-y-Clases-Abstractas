@@ -55,12 +55,12 @@ public class EjemploForm {
         }
     }
 
-    public static void formaAnonima() {
+    /*public static void formaAnonima() {
         ElementoForm el = new ElementoForm() {
             @Override
             public String dibujarHtml() {
                 return null;
             }
         };
-    }
+    }*/
 }
