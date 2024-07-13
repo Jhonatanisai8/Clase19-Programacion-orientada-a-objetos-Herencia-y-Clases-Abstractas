@@ -3,7 +3,6 @@ package org.jhonatan.pooclasesastractas.form.elementos;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jhonatan.pooclasesastractas.form.validador.LargoValidador;
 import org.jhonatan.pooclasesastractas.form.validador.Validador;
 import org.jhonatan.pooclasesastractas.form.validador.Mensaje.MensajeFormateable;
 
@@ -50,7 +49,7 @@ abstract public class ElementoForm {
         for (Validador v : validadores) {// iteramos
             if (!v.esValido(this.valor)) {// verificamos si es valido
                 if (v instanceof MensajeFormateable) {
-                    this.errores.add(((LargoValidador) v).mensajeFormateado(nombre));
+                    this.errores.add(((MensajeFormateable) v).mensajeFormateado(nombre));
                 } else {
                     this.errores.add(String.format(v.getMensaje(), nombre));
                 }
